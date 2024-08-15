@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="surah"
+            type="com.training.alqurannur.model.Data" />
+        <variable
+            name="lisnter"
+            type="com.training.alqurannur.QuranAdapter.SurahClickListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:onClick="@{() -> lisnter.onSurahClick(surah)}"
+        >
+
+        <TextView
+            android:id="@+id/tvSurahName"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{surah.name}"
+            />
+
+        <TextView
+            android:id="@+id/tvSurahEnglishName"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{surah.englishName}" />
+
+        <TextView
+            android:id="@+id/numberArabic"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{surah.number.toString()}"
+            android:layout_gravity="end|center"/>
+
+    </LinearLayout>
+</layout>
