@@ -31,7 +31,7 @@ class QuranAdapter(private var quranList: List<Data?>?, private val lisnter: Sur
         quranList = items
     }
 
-    class QuranViewHolder(val item: View) : RecyclerView.ViewHolder(item) {
+    class QuranViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = SurahItemBinding.bind(item)
     }
 

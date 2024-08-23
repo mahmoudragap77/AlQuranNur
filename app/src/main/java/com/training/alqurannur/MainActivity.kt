@@ -21,12 +21,16 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.viewModel = viewModel
         binding.lifecycleOwner = this
-        binding.recyclerView.layoutManager = LinearLayoutManager(this)
 
         val adapter = QuranAdapter(mutableListOf(),viewModel)
         binding.recyclerView.adapter = adapter
 
-
+//        viewModel.fetchSurah()
+//        viewModel.surah.observe(this){
+//            adapter.setItems(it)
+//            adapter.notifyDataSetChanged()
+//            Log.d("TAG",it.toString())
+//        }
 
     }
     }

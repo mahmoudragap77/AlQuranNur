@@ -8,6 +8,7 @@ class QuranRepository {
     // ...
 
     suspend fun getQuran(): List<Data?>? {
+        Log.d("TAG", "getQuran called with ${API.quranService.getQuran().data?.size}")
         return API.quranService.getQuran().data
     }
 }

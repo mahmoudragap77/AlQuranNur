@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
@@ -10,36 +12,54 @@
             type="com.training.alqurannur.QuranAdapter.SurahClickListener" />
     </data>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp"
-        android:onClick="@{() -> lisnter.onSurahClick(surah)}"
-        >
+        android:padding="16dp">
 
+        <!-- Surah Number -->
         <TextView
-            android:id="@+id/tvSurahName"
+            android:id="@+id/surahNumberTextView"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="@{String.valueOf(surah.number)}"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="1" />
+
+        <!-- Surah Arabic Name -->
+        <TextView
+            android:id="@+id/surahArabicNameTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@{surah.name}"
-            />
-
-        <TextView
-            android:id="@+id/tvSurahEnglishName"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
             android:textStyle="bold"
-            android:layout_width="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/surahNumberTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="الفاتحة" />
+
+        <!-- Surah English Name -->
+        <TextView
+            android:id="@+id/surahEnglishNameTextView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@{surah.englishName}" />
+            android:text="@{surah.englishName}"
+            android:textSize="16sp"
+            android:textAlignment="textEnd"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintStart_toEndOf="@id/surahNumberTextView"
+            app:layout_constraintTop_toBottomOf="@id/surahArabicNameTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Al-Fatiha" />
 
-        <TextView
-            android:id="@+id/numberArabic"
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@{surah.number.toString()}"
-            android:layout_gravity="end|center"/>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
+
