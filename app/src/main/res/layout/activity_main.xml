@@ -6,16 +6,39 @@
     <data>
         <variable
             name="viewModel"
-            type="com.training.alqurannur.QuranViewModel" />
+            type="com.training.alqurannur.util.QuranViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <ImageView
+            app:showError="@{viewModel.surah}"
+            android:id="@+id/img"
+            android:src="@drawable/baseline_error_24"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            app:showLoading="@{viewModel.surah}"
+            android:id="@+id/prograss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
         <androidx.recyclerview.widget.RecyclerView
+            app:showSuccess="@{viewModel.surah}"
             android:id="@+id/recyclerView"
-            items="@{viewModel.surah}"
+            items="@{viewModel.surah.toData()}"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
