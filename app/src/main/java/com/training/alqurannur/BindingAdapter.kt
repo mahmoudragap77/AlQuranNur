@@ -1,10 +1,12 @@
 package com.training.alqurannur
 
+import android.annotation.SuppressLint
 import android.view.View
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.training.alqurannur.model.Data
 
+@SuppressLint("NotifyDataSetChanged")
 @BindingAdapter("items")
 fun setItems(view :RecyclerView ,items :List<Data?>?){
     val adapter = view.adapter as QuranAdapter

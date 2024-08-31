@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.AlQuranNur" parent="Base.Theme.AlQuranNur" />
+
+    <style name="launcher" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_logo</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:colorPrimary">@color/bg_color</item>
+    </style>
 </resources>
