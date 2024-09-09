@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/surahFragment2">
+
+    <fragment
+        android:id="@+id/azanFragment"
+        android:name="com.training.alqurannur.util.fragments.AzanFragment"
+        android:label="fragment_azan"
+        tools:layout="@layout/fragment_azan" />
+    <fragment
+        android:id="@+id/listeningFragment"
+        android:name="com.training.alqurannur.util.fragments.AzkarFragment"
+        android:label="fragment_azkar"
+        tools:layout="@layout/fragment_azkar" />
+    <fragment
+        android:id="@+id/surahFragment2"
+        android:name="com.training.alqurannur.util.fragments.SurahFragment"
+        android:label="fragment_surah"
+        tools:layout="@layout/fragment_surah" >
+        <action
+            android:id="@+id/action_surahFragment2_to_azanFragment"
+            app:destination="@id/azanFragment"
+            app:enterAnim="@anim/transaction_in"
+            app:exitAnim="@anim/transaction_out"
+            app:popEnterAnim="@anim/transaction_in"
+            app:popExitAnim="@anim/transaction_out" />
+        <action
+            android:id="@+id/action_surahFragment2_to_listeningFragment"
+            app:destination="@id/listeningFragment" />
+        <action
+            android:id="@+id/action_surahFragment2_to_sebhaFragment"
+            app:destination="@id/sebhaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sebhaFragment"
+        android:name="drawable.SebhaFragment"
+        android:label="fragment_sebha"
+        tools:layout="@layout/fragment_sebha" />
+</navigation>
