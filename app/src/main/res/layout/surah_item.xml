@@ -4,62 +4,77 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="surah"
             type="com.training.alqurannur.model.Data" />
+
         <variable
             name="lisnter"
             type="com.training.alqurannur.QuranAdapter.SurahClickListener" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        app:cardCornerRadius="24dp"
+        android:backgroundTint="@color/bg_color"
+        android:layout_margin="8dp">
 
-        <!-- Surah Number -->
-        <TextView
-            android:id="@+id/surahNumberTextView"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:gravity="center"
-            android:text="@{String.valueOf(surah.number)}"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="1" />
 
-        <!-- Surah Arabic Name -->
-        <TextView
-            android:id="@+id/surahArabicNameTextView"
-            android:layout_width="0dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{surah.name}"
-            android:textSize="24sp"
-            android:textColor="@android:color/black"
-            android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@id/surahNumberTextView"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="الفاتحة" />
+            android:padding="16dp"
+            android:layout_margin="8dp">
 
-        <!-- Surah English Name -->
-        <TextView
-            android:id="@+id/surahEnglishNameTextView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@{surah.englishName}"
-            android:textSize="16sp"
-            android:textAlignment="textEnd"
-            android:textColor="@android:color/darker_gray"
-            app:layout_constraintStart_toEndOf="@id/surahNumberTextView"
-            app:layout_constraintTop_toBottomOf="@id/surahArabicNameTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="Al-Fatiha" />
+            <!-- Surah Number -->
+            <TextView
+                android:id="@+id/surahNumberTextView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@{String.valueOf(surah.number)}"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FEFCFB"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="1" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Surah Arabic Name -->
+            <TextView
+                android:id="@+id/surahArabicNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{surah.name}"
+                android:textSize="24sp"
+                android:textColor="#FEFCFB"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/surahNumberTextView"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="الفاتحة"
+                />
+
+            <!-- Surah English Name -->
+            <TextView
+                android:id="@+id/surahEnglishNameTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{surah.englishName}"
+                android:textSize="16sp"
+                android:textAlignment="textEnd"
+                android:textColor="#FEFCFB"
+                app:layout_constraintStart_toEndOf="@id/surahNumberTextView"
+                app:layout_constraintTop_toBottomOf="@id/surahArabicNameTextView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:text="Al-Fatiha" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
 </layout>
 

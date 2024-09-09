@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Quran"
+        android:icon="@drawable/quran"
+        android:id="@+id/surahFragment2"
+        android:orderInCategory="1" />
+    <item
+        android:title="Listening"
+        android:icon="@drawable/listen"
+        android:id="@+id/listeningFragment"
+        android:orderInCategory="2" />
+    <item
+        android:title="Azan"
+        android:icon="@drawable/azan"
+        android:id="@+id/azanFragment"
+        android:orderInCategory="3" />
+    <item
+        android:title="Sebha"
+        android:icon="@drawable/sebha"
+        android:id="@+id/sebhaFragment"
+        android:orderInCategory="4" />
+
+</menu>
